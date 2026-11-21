@@ -1,0 +1,10 @@
+{
+  "id": "hall_hongyi",
+  "file": "refs/raw2/009_4C43EE53ADAFE5C9131F8C8AD3B_07045926_5EC4B.jpg",
+  "crop": { "left": 0.11, "top": 0.195, "right": 0.66, "bottom": 0.36 },
+  "targetW": 320,
+  "mode": "wall",
+  "wallTop": 0.22,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/info/1601/169851.htm",
+  "note": "弘医楼：红色穿孔板挑檐 + 白色竖向柱廊 + 通长大玻璃带（取整栋正立面，裁掉天空与前景人群）"
+}

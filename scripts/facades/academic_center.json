@@ -1,0 +1,10 @@
+{
+  "id": "academic_center",
+  "file": "refs/raw2/035_334C69A54BDC345B54DA53CABB0_33D4B3B6_701E2.jpg",
+  "crop": { "left": 0.38, "top": 0.38, "right": 0.64, "bottom": 0.66 },
+  "targetW": 240,
+  "mode": "wall",
+  "wallTop": 0.22,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "学术交流中心：中间那栋曲面玻璃塔楼（浅蓝玻璃 + 白色竖线脚）"
+}

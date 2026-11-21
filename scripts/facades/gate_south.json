@@ -1,0 +1,10 @@
+{
+  "id": "gate_south",
+  "file": "refs/raw2/006_C915E07D30DA39FE84E7076C380_697327AA_572DA.jpg",
+  "crop": { "left": 0.0, "top": 0.02, "right": 1.0, "bottom": 0.72 },
+  "targetW": 320,
+  "mode": "full",
+  "keyOut": true,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "南门正立面特写：红砂岩门楼、四开间门洞、斗拱挑檐、居中「川北医学院」匾额。keyOut 把门洞里的天空抠透，能看到后面的地面"
+}

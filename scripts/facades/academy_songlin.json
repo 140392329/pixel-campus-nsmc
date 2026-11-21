@@ -1,0 +1,10 @@
+{
+  "id": "academy_songlin",
+  "file": "refs/raw2/011_7D1E751B1E44F1B32A4574757C9_C5DC14F4_84A1C.jpg",
+  "crop": { "left": 0.50, "top": 0.20, "right": 0.99, "bottom": 0.38 },
+  "targetW": 320,
+  "mode": "wall",
+  "wallTop": 0.26,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "书院风格教学楼：红通柱 + 深色大玻璃带 + 灰坡屋顶（裁掉前景人头）"
+}

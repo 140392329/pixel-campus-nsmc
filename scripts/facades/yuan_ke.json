@@ -1,0 +1,10 @@
+{
+  "id": "yuan_ke",
+  "file": "refs/raw/F2FE762711119584B6D1FF05167_E7BE5EF5_5774EE.jpg",
+  "crop": { "left": 0.4, "top": 0.036, "right": 0.8, "bottom": 0.298 },
+  "targetW": 320,
+  "mode": "wall",
+  "wallTop": 0.3,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "东区学生公寓：白色墙面 + 通长浅蓝玻璃窗带 + 白色水平线脚（裁掉前景参观人群、天空与地面）"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "bld_sun",
+  "file": "refs/campus-1.jpg",
+  "crop": { "left": 0.2, "top": 0.415, "right": 0.82, "bottom": 0.602 },
+  "targetW": 240,
+  "mode": "wall",
+  "wallTop": 0.18,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "太阳城正立面：白色大挑檐 + 中间架空门架（太阳城匾额）+ 左右红墙玻璃两翼；已裁掉天空、草地广场与前景车辆"
+}

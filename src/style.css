@@ -1,0 +1,245 @@
+:root {
+  --ui-scale: 1;
+  --paper: #f2e8d5;
+  --ink: #2b2622;
+  --accent: #7a2e2a;
+  --accent-2: #b08b6a;
+  --panel: rgba(32, 28, 25, 0.94);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #14110f;
+  color: var(--paper);
+  font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+#game { position: fixed; inset: 0; }
+#game canvas { display: block; image-rendering: pixelated; }
+
+#ui-root {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100vw, 177.7778vh);
+  height: min(100vh, 56.25vw);
+  pointer-events: none;
+  font-size: calc(14px * var(--ui-scale));
+}
+#ui-root > * { pointer-events: auto; }
+
+.hud-top {
+  position: absolute;
+  top: max(10px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 16px;
+  background: rgba(24, 21, 18, 0.82);
+  border: 2px solid rgba(216, 195, 165, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  white-space: nowrap;
+}
+.hud-top .clock { color: var(--paper); font-weight: 700; letter-spacing: 1px; }
+.hud-top .zone { color: #d8c3a5; }
+
+.hud-buttons {
+  position: absolute;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+  display: flex;
+  gap: 8px;
+}
+
+.ui-btn {
+  appearance: none;
+  border: 2px solid rgba(216, 195, 165, 0.45);
+  background: rgba(24, 21, 18, 0.86);
+  color: var(--paper);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: inherit;
+}
+.ui-btn:hover { background: rgba(122, 46, 42, 0.85); }
+.ui-btn:focus-visible { outline: 3px solid #e6c98a; outline-offset: 2px; }
+.ui-btn.primary { background: var(--accent); border-color: #c98a6a; }
+.ui-btn.ghost { background: transparent; }
+
+.prompt {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(24, 21, 18, 0.85);
+  border: 2px solid #d8c3a5;
+  color: var(--paper);
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.prompt.show { opacity: 1; }
+
+.toast {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(24, 21, 18, 0.92);
+  border: 2px solid rgba(216, 195, 165, 0.5);
+  color: var(--paper);
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+  max-width: 86vw;
+  text-align: center;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.panel {
+  position: absolute;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(760px, 94vw);
+  max-height: 62vh;
+  display: none;
+  flex-direction: column;
+  background: var(--panel);
+  border: 3px solid var(--accent-2);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+.panel.open { display: flex; }
+
+.dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, rgba(122, 46, 42, 0.9), rgba(122, 46, 42, 0.35));
+  border-bottom: 2px solid rgba(216, 195, 165, 0.3);
+}
+.dialog-title { font-weight: 700; }
+.dialog-title small { display: block; font-weight: 400; color: #d8c3a5; font-size: 0.8em; }
+
+.dialog-body {
+  padding: 12px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 120px;
+}
+.msg {
+  max-width: 86%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.msg.npc { align-self: flex-start; background: #3b332c; border: 1px solid rgba(216, 195, 165, 0.25); }
+.msg.me { align-self: flex-end; background: #7a2e2a; }
+.msg.sys { align-self: center; background: rgba(216, 195, 165, 0.12); color: #d8c3a5; font-size: 0.86em; }
+
+.dialog-input {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 2px solid rgba(216, 195, 165, 0.2);
+  background: rgba(20, 17, 15, 0.9);
+}
+.dialog-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid rgba(216, 195, 165, 0.35);
+  background: #211d1a;
+  color: var(--paper);
+  font-size: 1em;
+  font-family: inherit;
+  user-select: text;
+}
+.dialog-input input:focus { outline: none; border-color: #e6c98a; }
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.62);
+  padding: 16px;
+}
+.modal-backdrop.open { display: grid; }
+.modal {
+  width: min(560px, 94vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: #241f1b;
+  border: 3px solid var(--accent-2);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+.modal h2 { margin: 0 0 4px; font-size: 1.15em; }
+.modal p.hint { color: #c9b8a0; font-size: 0.85em; line-height: 1.6; margin: 6px 0 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+.field label { font-size: 0.85em; color: #d8c3a5; }
+.field input, .field select {
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 2px solid rgba(216, 195, 165, 0.3);
+  background: #171411;
+  color: var(--paper);
+  font-size: 1em;
+  font-family: inherit;
+  user-select: text;
+}
+.field input:focus { outline: none; border-color: #e6c98a; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.status { font-size: 0.85em; min-height: 1.4em; margin: 6px 0; }
+.status.ok { color: #9ed08a; }
+.status.err { color: #e8a08a; }
+.warn {
+  font-size: 0.8em;
+  color: #e0b46a;
+  background: rgba(224, 180, 106, 0.1);
+  border-left: 3px solid #e0b46a;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin: 8px 0 14px;
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .hud-top { top: 6px; padding: 6px 10px; gap: 8px; font-size: 0.85em; }
+  .panel { max-height: 66vh; }
+  .dialog-body { min-height: 90px; }
+}
+
+/* 系统开启"减少动态效果"时，去掉提示/toast 的过渡动画 */
+@media (prefers-reduced-motion: reduce) {
+  .prompt, .toast, .ui-btn { transition: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}

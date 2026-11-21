@@ -1,0 +1,10 @@
+{
+  "id": "yuan_rui",
+  "file": "refs/raw2/035_334C69A54BDC345B54DA53CABB0_33D4B3B6_701E2.jpg",
+  "crop": { "left": 0.03, "top": 0.148, "right": 0.204, "bottom": 0.285 },
+  "targetW": 240,
+  "mode": "wall",
+  "wallTop": 0.3,
+  "sourceUrl": "https://www.nsmc.edu.cn/news/info/1601/189221.htm",
+  "note": "瑞园（研究生公寓，楼顶立牌可辨）：深灰蓝通长窗带 + 白色出挑线脚的弧形转角高层（只取塔楼墙面，避开天空、树与彩烟）"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "center_info",
+  "file": "refs/raw2/024_2973EA5FE109942C6AF7F2D1187_82D932B1_577EB.jpg",
+  "crop": { "left": 0.02, "top": 0.0, "right": 0.98, "bottom": 0.18 },
+  "targetW": 480,
+  "mode": "wall",
+  "wallTop": 0.05,
+  "anchor": "bottom",
+  "sourceUrl": "https://www.nsmc.edu.cn/news/",
+  "note": "图情信息中心入口门厅：浅灰石材柱 + 深蓝绿玻璃幕墙（贴楼底，上层由程序化标准层续上）"
+}
